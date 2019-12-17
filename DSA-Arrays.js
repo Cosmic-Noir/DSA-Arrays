@@ -183,12 +183,20 @@ const twoD = array => {
   return array;
 };
 
-console.log(
-  twoD([
-    [1, 0, 1, 1, 0],
-    [0, 1, 1, 1, 0],
-    [1, 1, 1, 1, 1],
-    [1, 0, 1, 1, 1],
-    [1, 1, 1, 1, 1]
-  ])
-);
+// console.log(
+//   twoD([
+//     [1, 0, 1, 1, 0],
+//     [0, 1, 1, 1, 0],
+//     [1, 1, 1, 1, 1],
+//     [1, 0, 1, 1, 1],
+//     [1, 1, 1, 1, 1]
+//   ])
+// );
+
+// String rotation
+
+const rotation = (str1, str2) => {
+  return (str2 + str2).indexOf(str1) != -1;
+};
+
+console.log(rotation("amazon", "azonam"));
