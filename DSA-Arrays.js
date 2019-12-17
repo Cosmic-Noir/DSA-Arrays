@@ -127,4 +127,68 @@ const merger = (arr1, arr2) => {
   return mergedArray;
 };
 
-console.log(merger([1, 3, 6, 8, 11], [2, 3, 5, 8, 9, 10]));
+// console.log(merger([1, 3, 6, 8, 11], [2, 3, 5, 8, 9, 10]));
+
+// Remove characters
+
+const removeChar = (string, remove) => {
+  const newString = "";
+  for (let i = 0; i < string.length; i++) {
+    // console.log(remove[i]);
+    for (let j = 0; j < remove.length; j++) {
+      if (string[i] !== remove[j]) {
+        // Can't seem to remove anything.
+        console.log("not a match");
+        newString += string[i];
+      }
+    }
+  }
+
+  return newString;
+};
+
+// console.log(removeChar("Battle of the Vowels: Hawaii vs. Grozny", "aeiou"));
+
+// Products
+
+const products = array => {
+  let prods = [];
+
+  for (let i = 0; i < array.length; i++) {
+    let product = 1;
+    for (let j = 0; j < array.length; j++) {
+      if (i != j) {
+        product *= array[j];
+      }
+    }
+    prods.push(product);
+  }
+  return prods;
+};
+
+// console.log(products([1, 3, 9, 4]));
+
+// 2D Array
+
+const twoD = array => {
+  for (let i = 0; i < array.length; i++) {
+    for (let j = 0; j < array[i].length; j++) {
+      if (array[i][j] === 0) {
+        for (let entry in array[i]) {
+          array[i][entry] = 0;
+        }
+      }
+    }
+  }
+  return array;
+};
+
+console.log(
+  twoD([
+    [1, 0, 1, 1, 0],
+    [0, 1, 1, 1, 0],
+    [1, 1, 1, 1, 1],
+    [1, 0, 1, 1, 1],
+    [1, 1, 1, 1, 1]
+  ])
+);
